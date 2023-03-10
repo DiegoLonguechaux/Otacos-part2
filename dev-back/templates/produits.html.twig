@@ -1,0 +1,25 @@
+<section>
+  <div>    
+    <ul class="categorie">
+      <li class="categorie_item_t">
+        <a class="categorie_font" href="{{ path('click&collect') }}">All</a>|
+      </li>
+      {% for item in categor %}
+      <li class="categorie_item_t">
+        <a class="categorie_font" href="{{ path('page_categorie', {'name': item.name}) }}">{{item.name}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% for produits in liste %}
+      <div>
+        <div class="button_categorie">
+                <img class="button_image" src="{{produits.image}}" alt="">
+                <p class="button_content">{{produits.name}}</p>
+                <p class="button_description">{{produits.description}}</p>
+                <p class="button_price">{{produits.price}} €</p>
+        </div>
+      </div>
+  {% endfor %}
+</section>
